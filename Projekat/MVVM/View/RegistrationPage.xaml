@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:viewmodels="clr-namespace:Projekat.MVVM.ViewModels"
+             x:Class="Projekat.MVVM.View.RegistrationPage">
+    <ContentPage.BindingContext>
+        <viewmodels:RegistrationViewModel />
+    </ContentPage.BindingContext>
+    <Grid Padding="20" BackgroundColor="#32AAB5">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="logo3.jpg" HeightRequest="200" HorizontalOptions="Center"/>
+            <Entry Placeholder="Ime" Text="{Binding FirstName}" />
+            <Entry Placeholder="Prezime" Text="{Binding LastName}" />
+            <Entry Placeholder="Email" Text="{Binding Email}" Keyboard="Email" />
+            <Entry Placeholder="Šifra" Text="{Binding Password}" IsPassword="True" />
+            <Button Text="Registracija" Command="{Binding RegisterCommand}" BackgroundColor="#262949" TextColor="#4D908E" CornerRadius="20"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

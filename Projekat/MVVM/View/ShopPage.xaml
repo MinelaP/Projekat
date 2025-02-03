@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Projekat.MVVM.ViewModels"
+             x:Class="Projekat.MVVM.View.ShoppingPage"
+             x:Name="ShopPageInstance"
+             Title="">
+    <ContentPage.BindingContext>
+        <viewmodels:ShopViewModel />
+    </ContentPage.BindingContext>
+    <Grid Padding="20" BackgroundColor="#32AAB5">
+        <StackLayout>
+            <!-- Header with logo and navigation buttons -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Image Source="logo2.png" HeightRequest="65" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Button Text="Profil" Command="{Binding NavigateToProfileCommand}" BackgroundColor="#262949" TextColor="White" Margin="0,0,10,0"/>
+                    <Button Text="Korpa" Command="{Binding NavigateToCartCommand}" BackgroundColor="#262949" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Products list -->
+            <CollectionView ItemsSource="{Binding Products}" HeightRequest="600" Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#90C9FF" CornerRadius="10" Margin="0,10">
+                            <StackLayout Padding="10">
+                                <Image Source="{Binding ImageUrl}" HeightRequest="100" />
+                                <Label Text="{Binding Name}" FontSize="Medium" TextColor="#262949" />
+                                <Label Text="{Binding Description}" FontSize="Small" TextColor="#048BA8" />
+                                <Label Text="{Binding Price, StringFormat='5 KM'}" FontSize="Small" TextColor="#262949" />
+                                <Button Text="Dodaj u Korpu" Command="{Binding BindingContext.BuyCommand, Source={x:Reference ShopPageInstance}}" CommandParameter="{Binding .}" BackgroundColor="#262949" TextColor="White" CornerRadius="20" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

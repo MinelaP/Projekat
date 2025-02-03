@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Projekat.AppShell"
+    xmlns:local="clr-namespace:Projekat.MVVM.View"
+    Title="Projekat">
+
+    <FlyoutItem Title="Welcome" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate local:WelcomePage}" />
+    </FlyoutItem>
+
+    
+
+
+    <FlyoutItem Title="Profile" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+    </FlyoutItem>
+
+
+
+    <FlyoutItem Title="Shop" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ShoppingPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cart" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate local:CardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Login" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Register" Icon="logo3.jpg">
+        <ShellContent ContentTemplate="{DataTemplate local:RegistrationPage}" />
+    </FlyoutItem>
+</Shell>

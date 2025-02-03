@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekat.MVVM.View.WelcomePage"
+             Title="">
+
+    <Grid Padding="20" BackgroundColor="#90C9FF">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="logo1.png" HeightRequest="200" HorizontalOptions="Center"  />
+            <Label Text="Dobrodosli u 'Avanture Malog Svjetlucavog Zmaja'!"
+                   FontSize="24"
+                   TextColor="#277DA1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   Padding="10"/>
+            <Button Text="Nastavi" Clicked="NavigateToLoginPage" BackgroundColor="#277DA1" TextColor="#DEE3FF" CornerRadius="20"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

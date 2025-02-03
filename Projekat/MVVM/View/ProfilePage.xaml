@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Projekat.MVVM.ViewModels"
+             x:Class="Projekat.MVVM.View.ProfilePage"
+             Title="">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:ProfileViewModel />
+    </ContentPage.BindingContext>
+    <Grid Padding="20" BackgroundColor="#90C9FF">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+            <Image Source="{Binding ProfilePicture}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
+            <Label Text="{Binding Name}" FontSize="Large" TextColor="#333" />
+            <Label Text="{Binding Surname}" FontSize="Medium" TextColor="#666" />
+            <Button Text="Nazad na Kupovinu" Command="{Binding NavigateToShopCommand}" BackgroundColor="#277DA1" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Korpa" Command="{Binding NavigateToCartCommand}" BackgroundColor="#065D9D" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Odjava" Command="{Binding LogoutCommand}" BackgroundColor="LightPink" TextColor="White" Margin="0,20,0,0" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
